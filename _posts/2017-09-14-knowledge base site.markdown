@@ -16,6 +16,7 @@ Gibook es una plataforma en línae para crear documentación.
 - Facilidad de edición:
   - Gitbook cuenta con un [editor gráfico](https://www.gitbook.com/editor) en línea con botones para añadir diferentes estilos de texto como encabezados, citas, negritas, subrayado, etc. Este editor va generando un archivo markdown de fondo.
   - También se puede utilizar AsciiDoc para añadir contenido
+  - Se pueden añadir [plugins](https://plugins.gitbook.com/) en la plataforma *online* y también en la instalación local.
 
 - Facilidad de versionar:
   - Se integra perfectamente con Github, aunque por sí solo, Gitbook utiliza Git para administrar sus versiones.
@@ -164,6 +165,8 @@ Docsify es un generador de sitios de documentación. A diferencia de GitBook, no
 
 ### Bookbinder
 
+[demo](https://docs.cloudfoundry.org/deploying/index.html)
+
 Es una gema de Ruby con una interfaz de línea de comandos para convertir archivos Markdown o DITA a un sitio estático HTML. Actualmente el proyecto se encuentra **inactivo** sin planes de dar mantenimiento al código.
 
 - Facilidad de edición:
@@ -173,10 +176,8 @@ Es una gema de Ruby con una interfaz de línea de comandos para convertir archiv
   - Se integra fácilmente con repositorios Git
 
 - Faclidad de despliegue:
-  -
 
 - Agradable a la vista:
-  -
 
 - Precio: **Gratis**
 
