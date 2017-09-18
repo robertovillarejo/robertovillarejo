@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Herramienta para base de conocimientos"
+date:   2017-06-06 18:42:40 +0000
+categories: 
+---
+
 # Comparación de herramientas para construir una base de conocimientos para la DADS Infotec
 
 ## Criterios a evaluar:
