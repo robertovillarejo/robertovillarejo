@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Instalación de StarUML en Ubuntu"
-date:   2017-09-15 10:53:00 +0000
+date:   2017-09-19 10:53:00 +0000
 categories:
 ---
 

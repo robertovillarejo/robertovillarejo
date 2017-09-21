@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cómo escribir un README"
-date:   2017-09-15 14:00:40 +0000
+date:   2017-09-18 14:00:40 +0000
 categories:
 ---
 
@@ -33,8 +33,11 @@ no lo usarán._
   * En Github, si no eliges una licencia por defecto conservas todos los derechos sobre tu proyecto pero siempre es mejor ser explícito al respecto.
   * Visita [Choose a License](choosealicense.com) para aclarar tus dudas
 - Bugs conocidos
+  * Publica los bugs conocidos para ahorrar tiempo a los desarrolladores, que sepan que no es su código el que falla.
 - Contribuciones
+  * Si este es un proyecto _open source_ en esta sección indica cómo es que se deben hacer las contribuciones.
 - Acerca del desarrollador
+  * Escribe un poco sobre quién o quiénes son los desarrolladores de este proyecto. Puedes incluir un enlace a tu página oficial. 
 
 ## Guía
 Antes de escribir el archivo README de cualquier proyecto, hazte las siguientes preguntas:
