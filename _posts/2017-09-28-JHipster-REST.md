@@ -11,9 +11,9 @@ La API REST de una aplicación debe retornar diferentes headers y códigos HTTP 
 
 A continuación se muestran los cuatro verbos (POST, GET, PUT, DELETE) junto con las posibles respuestas (códigos HTTP) de cada uno.  
 
-La librería de JHipster proporciona dos clases que ayudan a retornar fácilmente los headers y códigos HTTP:
+La librería de JHipster proporciona dos clases que ayudan a retornar fácilmente los headers y códigos HTTP:  
 - `io.github.jhipster.web.util.ResponseUtil`
-- `mipaquetebase.web.rest.util.HeaderUtil`: se genera dentro de tu aplicación JHipster.
+- `mipaquetebase.web.rest.util.HeaderUtil` (se genera dentro de tu aplicación JHipster)
 
 En esta publicación, también se muestra cómo retornar apropiadamente las respuestas HTTP utilizando estas dos clases.
 
@@ -21,8 +21,8 @@ En esta publicación, también se muestra cómo retornar apropiadamente las resp
 Este verbo se usa para crear una nueva entidad.
 
 Posibles códigos:
-- **201 CREATED**: La entidad se creó exitosamente
-- **400 BAD REQUEST**: La petición está mál formulada
+- **201 CREATED**: La entidad se creó exitosamente  
+- **400 BAD REQUEST**: La petición está mál formulada  
 
 ### CREADO (CREATED 201)
 Se envía:
@@ -32,14 +32,14 @@ Se envía:
   * el id de la entidad creada
 - la entidad creada se envía en el cuerpo
 
-**Código:** 201
-**Headers:**
+**Código:** 201  
+**Headers:**  
 ```
 X-miApp-alert: miApp.suscription.created
 X-miApp-params: a4fdbc56
 location: api/suscription/a4fdbc56
 ```
-**Body:**
+**Body:**  
 ```
 {
     “id”: “a4fdbc56”,
@@ -67,8 +67,8 @@ Se envía:
   * el nombre de la entidad que falló crearse
 - un cuerpo vacío
 
-**Código:** 400
-**Headers:**
+**Código:** 400  
+**Headers:**  
 ```
 X-miApp-error:error.idexists
 X-miApp-params: suscription
@@ -94,9 +94,9 @@ Se envía:
 - el código 200
 - el cuerpo con la entidad
 
-**Código:** 200
-**Headers:**
-**Body:**
+**Código:** 200  
+**Headers:**  
+**Body:**  
 ```
 {
     “id”: “a4fdbc56”,
@@ -109,9 +109,9 @@ Se envía:
 - el código 404
 - el cuerpo nulo
 
-**Código:** 200
-**Headers:**
-**Body:** Nulo
+**Código:** 200  
+**Headers:**  
+**Body:** Nulo  
 
 #### Con JHipster
 Para ambos casos: **OK** y **NOT FOUND**
@@ -130,13 +130,13 @@ Se envía:
   * el id de la entidad actualizada
 - el cuerpo con la entidad actualizada
 
-**Código:** 200
-**Headers:**
+**Código:** 200  
+**Headers:**  
 ```
 X-miApp-alert: miApp.suscription.updated
 X-miApp-params: a4fdbc56
 ```
-**Body:**
+**Body:**  
 ```
 {
    “id”: “a4fdbc56”,
@@ -165,13 +165,13 @@ Se envía:
   * la alerta de entidad eliminada
   * el id de la entidad eliminada
 
-**Código:** 200
-**Headers:**
+**Código:** 200  
+**Headers:**  
 ```
 X-miApp-alert: miApp.suscription.deleted
 X-miApp-params:  a4fdbc56
 ```
-**Body:** Nulo
+**Body:** Nulo  
 
 #### Con JHipster
 ```
