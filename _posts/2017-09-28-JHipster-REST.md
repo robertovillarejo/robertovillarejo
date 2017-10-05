@@ -30,14 +30,17 @@ Se envía:
 - dos headers propios de la aplicación:
   * la alerta de entidad creada
   * el id de la entidad creada
+- un header con la ubicación de la entidad
 - la entidad creada se envía en el cuerpo
+
+**endpoint**: `http://SERVIDOR:PUERTO/API-URL/suscriptions`
 
 **Código:** 201  
 **Headers:**  
 ```
 X-miApp-alert: miApp.suscription.created
 X-miApp-params: a4fdbc56
-location: api/suscription/a4fdbc56
+location: api/suscriptions/a4fdbc56
 ```
 **Body:**  
 ```
@@ -94,6 +97,8 @@ Se envía:
 - el código 200
 - el cuerpo con la entidad
 
+**endpoint**: `http://SERVIDOR:PUERTO/API-URL/suscriptions`
+
 **Código:** 200  
 **Headers:**  
 **Body:**  
@@ -130,6 +135,8 @@ Se envía:
   * el id de la entidad actualizada
 - el cuerpo con la entidad actualizada
 
+**endpoint**: `http://SERVIDOR:PUERTO/API-URL/suscriptions`
+
 **Código:** 200  
 **Headers:**  
 ```
@@ -164,6 +171,8 @@ Se envía:
 - dos headers propios de la aplicación:
   * la alerta de entidad eliminada
   * el id de la entidad eliminada
+
+**endpoint**: `http://SERVIDOR:PUERTO/API-URL/suscriptions/{id}`
 
 **Código:** 200  
 **Headers:**  
