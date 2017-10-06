@@ -31,7 +31,8 @@ luego ejecuta `scoop install maven`
 ## MongoDB Community Edition
 Para instalar MongoDB CE en Ubuntu 16.04 ([guía oficial](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)):
 Ejecuta:
-```sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+```
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 sudo apt-get update
 sudo apt-get install -y mongodb-org
@@ -48,7 +49,8 @@ Sigue la [guía oficial de instalación](http://www.jhipster.tech/installation/)
 # Arquetipo JHipster
 - Generación de la aplicación JHipster
 
-  ```mkdir miApp
+  ```
+  mkdir miApp
   cd miApp
   jhipster
   ```
@@ -56,11 +58,13 @@ Sigue la [guía oficial de instalación](http://www.jhipster.tech/installation/)
   [Guía en inglés](http://www.jhipster.tech/creating-an-app/)
 
 - Recorrido por el arquetipo
-  ```--domain
-  --repository
-  service
-  service.impl
-  web.rest
+  ```
+  |--io.github.robertovillarejo
+    |--domain                        - Los objetos de dominio (POJO) mapeados a la BD
+    |--repository                    - Las interfaces de repositorio que extienden de JpaRepository o MongoRepository
+    |--service                       - Las interfaces de los servicios    (opcional)
+    |--service.impl                  - La implementación de los servicios (opcional)
+    |--web.rest                      - Los `RestController` que usan al repositorio o al servicio
   ```
 
 # Tecnología REST
