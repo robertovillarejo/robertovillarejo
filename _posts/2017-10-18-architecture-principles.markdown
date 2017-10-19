@@ -53,7 +53,7 @@ La cohesión dentro de un bloque de construcción de un sistema debe ser tan alt
 
 Puedes lograr alta cohesión implementando los siguientes principios: abstracción, separación de intereses y ocultamiento de la información.
 
-3. Principio de **Diseño para el Cambio**
+## 3. Principio de **Diseño para el Cambio**
 El software se encuentra en constante cambio y los cambios son, con frecuencia, difíciles de prever. La idea detrás del **diseño para el cambio** es que te anticipes a cambios previsibles en la arquitectura.
 
 Para manejar los cambios esperados podrías, por ejemplo, reunir y considerar con anticipación requerimientos más extensos. Las ambigüedades en la especificación de requerimientos pueden indicar requerimientos funcionales más extensos por venir. Si una funcionalidad no ha sido implementada por razones de costos, considera que esa funcionalidad podría implementarse en las siguientes versiones del sistema.
@@ -62,10 +62,39 @@ En cuanto a los cambios no esperados, podrías adoptar una arquitectura altament
 
 En general, un **diseño para el cambio** se logra consecuentemente aplicando el principio de bajo acoplamiento. Algunos ejemplos son: AOS (Arquitectura Orientada a Servicios) o POA (Programación Orientada a Aspectos).
 
-4. Principio de **Separación de Intereses**
-5. Principio de **Ocultamiento de la Información**
-6. Principios de **Abstracción**
-7. Principio de **Modularidad**
-8. Principio de **Trazabilidad**
-9. Principio de **Auto-documentación**
-10. Principio de **Incrementalidad**
+## 4. Principio de **Separación de Intereses**
+**Divide y vencerás**
+El principio de **separación de intereses**, en general, establece que deberías separar diferentes aspectos de un problema y lidiar con cada uno de estos sub-problemas individualmente, de esta manera se reduce la complejidad.
+
+El uso más importante de la **separación de intereses** es la **modularización**. Con frecuencia, los requerimientos funcionales son tomados como criterio para la descomposición de un software. Así, cada bloque de construcción cumple con una funcionalidad específica.
+
+Es difícil considerar la separación de los intereses uni-dimensionalmente. Por ejemplo, la descomposición puede ser basada en la funcionalidad pero también se puede separar la función principal de aspectos tales como la gestión de transacciones, seguridad, registro, etc.
+
+## 5. Principio de **Ocultamiento de la Información**
+El ocultamiento de la información es un principio fundamental para estructurar y entender sistemas complejos. En general, establece que a un cliente solo se le muestra esa parte de la información que realmente es necesaria para su tarea y la información restante se oculta.
+
+El ocultamiento de la información se aplica en la modularización de un software. Las decisiones de diseño se encapsulan en un bloque de construcción  y se dan a conocer externamente a través de interfaces bien definidas.
+
+Un ejemplo de este principio es el patrón de diseño **Fachada** el cual es un objeto que protege el acceso directo a un subsistema entero. La fachada proporciona una interfaz común de los bloques de consutrcción de un subsistema y esto oculta el subsistema que yace detrás de los bloques de construcción. Un ejemplo de fachada es un intérprete que usualmente consiste de distintos bloques tales como _parsers_, implementación de elementos de lenguaje, compiladores, etc.
+
+### Ocultamiento de la información mediante la creación de capas
+Una arquitectura en capas usualmente se estructura de tal forma que cada capa solo vee la capa directamente debajo de ésta. Una capa debe ser accedida solamente mediante interfaces limpias tanto como sea posible. Una capa no debe ver ningún objeto específico o detalles de implementación de ninguna otra capa.
+
+## 6. Principios de **Abstracción**
+Abstracción significa enfocarse en aspectos de un concepto que son relevantes para un propósito específico y dejar de lado detalles no importante para este propósito particular. Por lo tanto, la abstracción es un case especial de la **separación de intereses**: se separan los detalles importantes de los menos importantes.
+
+La arquitectura de software contiene algunos sub-principios especiales de abstracción respecto a las abstracciones de interfaces. El resultado de la aplicación de estos principios de abstracción debe ser un _enfoque en las interfaces_: una arquitectura realmente toma efecto a través de las relaciones de los bloques de construcción a otro. Las interfaces del bloque son importantes para estas relaciones que se crean y para su calidad. En detalle, os principios para las abstracciones de interfaz son:
+
+  - Interfaces explícitas
+  - Separación de la interfaz y su implementación
+  - Principio de sustitución de Liskov
+  - Principio de segregación de interfaz
+  - Soporte de lenguaje para abstracciones
+  - Diseño por contrato
+
+Un ejemplo en el que la abstracción se encuentra muy conectada al ocultamiento de la información es la **portabilidad**. Por ejemplo, las máquinas virtuales que pueden ejecutar un _byte code_ de un lenguaje de programación en múltiples sistemas operativos y capas de acceso a bases de datos que soportan operciones en diferentes productos de bases de datos con una interfaz uniforme.
+
+## 7. Principio de **Modularidad**
+## 8. Principio de **Trazabilidad**
+## 9. Principio de **Auto-documentación**
+## 10. Principio de **Incrementalidad**
