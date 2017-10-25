@@ -95,6 +95,45 @@ La arquitectura de software contiene algunos sub-principios especiales de abstra
 Un ejemplo en el que la abstracción se encuentra muy conectada al ocultamiento de la información es la **portabilidad**. Por ejemplo, las máquinas virtuales que pueden ejecutar un _byte code_ de un lenguaje de programación en múltiples sistemas operativos y capas de acceso a bases de datos que soportan operciones en diferentes productos de bases de datos con una interfaz uniforme.
 
 ## 7. Principio de **Modularidad**
+La arquitectura de un sistema debe ser constituida de bloques de construcción con responsabilidades funcionales claramente distinguibles. La modularidad se usa para hacer que los bloques de una arquitectura sean modificables, extensibles y reusables.
+
+El principio de modularidad establece que debes esmerarte en obtener bloques de construcción auto-contenidos con relaciones arquitectónicas simples y estables.
+
+Hay varios enfoques que conducen a la modularidad de una arquitectura de software, por ejemplo orientación de objetos, enfoque de componentes, arquitecturas en capas, arquitecturas multiniveles y muchas más. Para implementar el principio de modularidad puedes aplicar los principios de separación de intereses y ocultamiento de la información, además de la abstracción con la que se encuentra fuertemente conectada.
+
+La modularidad conduce al bajo acoplamiento y la alta cohesión ya que te permite encapsular intereses relacionados en un bloque de consutrucción modular.
+
+Un aspecto importante de la modularidad es el principio _abierto/cerrado_, el cual establece que los bloques de construcción deben ser abiertos al cambio pero cerrados para el uso de sus detalles internos por otros bloques de construcción.
+
 ## 8. Principio de **Trazabilidad**
+Para asegurar que una arquitectura sea comprensible es importante garantizar la trazabilidad de estructuras arquitectónicas y las decisiones. Idealmente, debe existir correspondencia entre un requerimiento del sistema y el bloque de construcción que lo implementa.
+
+Una técnica para mejorar la trazabilidad es indicar -tanto en el código fuente como en los documentos de diseño la estructura arquitectónica a la que se asocia cada uno (p.ej. comentarios). Otra forma puede ser que en el código se incluyan metadatos que hagan referencia a los requerimientos de un bloque de construcción.
+
+La trazabilidad ayuda a obtener bajo acoplamiento y alcanzar un diseño para el cambio porque hace que las estructuras sean más fáciles de comprender y por tanto más independientes y modificables.
+
 ## 9. Principio de **Auto-documentación**
+La auto-documentación significa que el arquitecto o desarrollador de un bloque de construcción debe tratar de hacer que cada elemento de información de dicho bloque sea parte del bloque de construcción mismo. Esto respalda al **diseño para el cambio** en cuanto a los cambios en la documentación y otra información adicional.
+
+Con frecuencia, se realizan pequeños cambios en el _software_ y no se documentan. Por lo tanto, el código, la documentación, las descripciones arquitectónicas, diseños y otras descripciones de un sistema se vuelven inconsistentes.
+
+La **auto-documentación** se relaciona con la trazabilidad: la información que existe directamente en el blqoue de construcción puede ser fácilmente rastreada. Otro beneficio de este principio es que la documentación se puede usar para generar documentos relacionados que tienen que crearse basado en el código y otra información. Por ejemplo, la documentación en HTML de una API generada automáticamente mediante **JavaDoc**.
+
 ## 10. Principio de **Incrementalidad**
+**Los intentos por diseñar un sistema entero de una sola vez, con frecuencia fallan** porque, por ejemplo, le diste demasiado valor a aspectos incidentales o porque los aspectos importantes fueron pasados por alto.
+Puesto que, con frecuencia, las arquitecturas de _software_ son muy complejas, en un nuevo desarrollo (el primer diseño arquitectónico) tanto como en un sistema existente (los cambios) deben implementarse tan tarde como sea posible.
+
+Estas situaciones surgen, por ejemplo, porque los arquitectos y desarrolladores (entrenados en aspectos técnicos) usualmente no hablan el mismo lenguaje que los expertos en el dominio y porque ambas partes dan por hecho que se han ententido cosas que no son claras para alguien no experto en el campo.
+
+Para evitar este tipo de malentendidos, **desarrolla incrementalmente y obtén retroalimientación frecuente**. Algunas reglas podrían ser:
+  - Entrega temprana de primeras versiones de un sistema
+  - Opinión temprana de usuarios reales del sistema
+  - Introducción de nuevas funcionalidades _paso a paso_
+
+Por lo tanto, la _**incrementalidad**_ significa aplicar el principio de **separación de intereses** a los pasos del desarrollo en el desarrollo del sistema.
+
+### Crecimiento gradual (Piecemeal growth)
+La idea es dejar que una arquitectura crezca _paso a paso_. Después de cada paso hay un asesoramiento que conlleva una decisiónn sobre qué hacer enseguida. Esto significa que hay una planeación anticipada muy pequeña o no la hay.
+
+### Prototipado
+Muchas veces tiene sentido desarrollar prototipos simples antes de desarrollar un producto a fin de conocer mejor el problema. A veces estos prototipos se convierten en productos; otras veces tiene más sentido tirar el prototipo y empezar de nuevo. Un prototipo le da al arquitecto y al desarrollador un entendimiento de los problemas reales del dominio. Otra forma podría ser un prototipo evolucionario que es un prototipo que se puede desarrollar incrementalmente hasta convertirse en producto. 
