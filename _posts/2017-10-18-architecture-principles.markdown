@@ -136,4 +136,7 @@ Por lo tanto, la _**incrementalidad**_ significa aplicar el principio de **separ
 La idea es dejar que una arquitectura crezca _paso a paso_. Después de cada paso hay un asesoramiento que conlleva una decisiónn sobre qué hacer enseguida. Esto significa que hay una planeación anticipada muy pequeña o no la hay.
 
 ### Prototipado
-Muchas veces tiene sentido desarrollar prototipos simples antes de desarrollar un producto a fin de conocer mejor el problema. A veces estos prototipos se convierten en productos; otras veces tiene más sentido tirar el prototipo y empezar de nuevo. Un prototipo le da al arquitecto y al desarrollador un entendimiento de los problemas reales del dominio. Otra forma podría ser un prototipo evolucionario que es un prototipo que se puede desarrollar incrementalmente hasta convertirse en producto. 
+Muchas veces tiene sentido desarrollar prototipos simples antes de desarrollar un producto a fin de conocer mejor el problema. A veces estos prototipos se convierten en productos; otras veces tiene más sentido tirar el prototipo y empezar de nuevo. Un prototipo le da al arquitecto y al desarrollador un entendimiento de los problemas reales del dominio. Otra forma podría ser un prototipo evolucionario que es un prototipo que se puede desarrollar incrementalmente hasta convertirse en producto.
+
+## Referencias
+[Software Architecture](http://www.springer.com/gp/book/9783642197352)
