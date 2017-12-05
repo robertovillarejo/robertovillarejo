@@ -19,8 +19,10 @@ Para descomprimir, puedes usar [7zip](http://www.7-zip.org/)
 `CREATE DATABASE tpdw`
 
 2. Crear el usuario `pdes` en la base de datos y darle permisos  
-`CREATE USER 'pdes'@'localhost'`  
-`GRANT ALL ON pdes.* TO 'pdes'@'localhost'`
+```
+CREATE USER 'pdes'@'localhost'
+`GRANT ALL ON pdes.* TO 'pdes'@'localhost'
+```
 
 3. Conectarse a la base de datos por consola o con MySQL Workbench
 `mysql -u [USER] -p`
@@ -29,7 +31,8 @@ Para descomprimir, puedes usar [7zip](http://www.7-zip.org/)
 
 5. Hacer consultas a la BD. La documentación completa sobre esta base de datos se encuentra en [DataWarehouse PDES](https://www.processdash.com/pdes-tpdw)
 Por ejemplo, para obtener las fases de cada proyecto y los defectos inyectados y removidos en cada una:  
-`SELECT DISTINCT p.project_name AS "Nombre del proyecto", ph.phase_key AS "Fase Id",
+```
+SELECT DISTINCT p.project_name AS "Nombre del proyecto", ph.phase_key AS "Fase Id",
 ph.phase_short_name AS "Fase (nombre corto)",
 ph.phase_name AS "Fase",
 (SELECT SUM(defect_fix_count)
@@ -45,7 +48,8 @@ INNER JOIN project AS p
 ON p.project_key = pi.project_key
 JOIN defect_log_fact AS d
 WHERE ph.phase_key = d.defect_injected_phase_key OR ph.phase_key = d.defect_removed_phase_key
-ORDER BY ph.phase_key`
+ORDER BY ph.phase_key
+```
 
 ## BD Redmine
 
@@ -58,5 +62,3 @@ ORDER BY ph.phase_key`
 3. Ejecutar el script de respaldo de la BD
 
 4. Hacer consultas a la BD.
-
-https://mega.nz/#!z5wxGYzD!R7M7DhiWVjeHRKIRCKj33wWazFyaNtLKIYAl8x0uDA8

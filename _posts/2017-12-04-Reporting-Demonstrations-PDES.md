@@ -13,7 +13,7 @@ categories:
 A continuación se enlistan los pasos para poner a funcionar el **add-on de reportes** de David Tuman. Los pasos oficiales se encuentran en este [enlace](https://github.com/dtuma/processdash-reporting-demo/wiki). Sin embargo, **existe un *bug* en la versión 2.2 del cliente Process Dashboard** que impide ver correctamente los reportes del add-on. Por esta razón, se necesitan pasos adicionales para poner a funcionar este módulo.
 
 ## Usando el add-on de Reportes
-1. Generar el war de reportes tal como lo indica David Tuman en su [wiki](https://github.com/dtuma/processdash-reporting-demo/wiki) o descargarlo de [aquí](https://mega.nz/#!OlJGAZDA!MUmWPU2vLk765Et_SlOdPbS9ft6wNPVP-f8c8Rou5A0)
+1. Generar el war de reportes tal como lo indica David Tuman en su [wiki](https://github.com/dtuma/processdash-reporting-demo/wiki) o descargarlo de ![aquí]({{ "/assets/pdash-reporting-demo-1.0.war" | absolute_url }} "WAR Reporting Demo")
 2. Copiar el war a la carpeta de los add-ons del Process Dashboard.
   Para saber cuál es la carpeta de donde el Process Dashboard lee los add-ons, consulta el **Menú principal > Ayuda > Sobre Process Dashboard > Configuración**.  
   Verás una leyenda como ésta:
@@ -59,7 +59,8 @@ A continuación se enlistan los pasos para poner a funcionar el **add-on de repo
 5. Introduce las credenciales definidas en Process Dashboard.
 
 6. Realiza consultas SQL. La siguiente consulta muestra las fases que tienen registradas defectos inyectados o removidos de cada proyecto y el número de defectos inyectados y removidos de cada una:
-`SELECT DISTINCT p.project_key AS "Id del proyecto", p.project_name AS "Nombre del proyecto", ph.phase_key AS "Fase Id",
+```
+SELECT DISTINCT p.project_key AS "Id del proyecto", p.project_name AS "Nombre del proyecto", ph.phase_key AS "Fase Id",
 ph.phase_short_name AS "Fase (nombre corto)",
 ph.phase_name AS "Fase",
 (SELECT SUM(defect_fix_count)
@@ -75,4 +76,5 @@ INNER JOIN project AS p
 ON p.project_key = pi.project_key
 JOIN defect_log_fact AS d
 WHERE ph.phase_key = d.defect_injected_phase_key OR ph.phase_key = d.defect_removed_phase_key
-ORDER BY p.project_key, ph.phase_key`
+ORDER BY p.project_key, ph.phase_key
+```
