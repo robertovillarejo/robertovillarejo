@@ -13,7 +13,7 @@ categories:
 A continuación se enlistan los pasos para poner a funcionar el **add-on de reportes** de David Tuman. Los pasos oficiales se encuentran en este [enlace](https://github.com/dtuma/processdash-reporting-demo/wiki). Sin embargo, **existe un *bug* en la versión 2.2 del cliente Process Dashboard** que impide ver correctamente los reportes del add-on. Por esta razón, se necesitan pasos adicionales para poner a funcionar este módulo.
 
 ## Usando el add-on de Reportes
-1. Generar el war de reportes tal como lo indica David Tuman en su [wiki](https://github.com/dtuma/processdash-reporting-demo/wiki) o descargarlo de ![aquí]({{ "/assets/pdash-reporting-demo-1.0.war" | absolute_url }} "WAR Reporting Demo")
+1. Generar el war de reportes tal como lo indica David Tuman en su [wiki](https://github.com/dtuma/processdash-reporting-demo/wiki) o descargarlo de [aquí]({{ "/assets/pdash-reporting-demo-1.0.war" | absolute_url }} "WAR Reporting Demo")
 2. Copiar el war a la carpeta de los add-ons del Process Dashboard.
   Para saber cuál es la carpeta de donde el Process Dashboard lee los add-ons, consulta el **Menú principal > Ayuda > Sobre Process Dashboard > Configuración**.  
   Verás una leyenda como ésta:
