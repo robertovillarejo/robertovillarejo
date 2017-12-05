@@ -27,7 +27,8 @@ Para descomprimir, puedes usar [7zip](http://www.7-zip.org/)
 
 4. Ejecutar el script de respaldo de la BD
 
-5. Hacer consultas a la BD. Por ejemplo, para obtener las fases de cada proyecto y los defectos inyectados y removidos en cada una:  
+5. Hacer consultas a la BD. La documentación completa sobre esta base de datos se encuentra en [DataWarehouse PDES](https://www.processdash.com/pdes-tpdw)
+Por ejemplo, para obtener las fases de cada proyecto y los defectos inyectados y removidos en cada una:  
 `SELECT DISTINCT p.project_name AS "Nombre del proyecto", ph.phase_key AS "Fase Id",
 ph.phase_short_name AS "Fase (nombre corto)",
 ph.phase_name AS "Fase",
