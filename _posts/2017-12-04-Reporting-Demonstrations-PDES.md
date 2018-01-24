@@ -60,15 +60,19 @@ A continuación se enlistan los pasos para poner a funcionar el **add-on de repo
 
 6. Realiza consultas SQL. La siguiente consulta muestra las fases que tienen registradas defectos inyectados o removidos de cada proyecto y el número de defectos inyectados y removidos de cada una:
 ```
-SELECT DISTINCT p.project_key AS "Id del proyecto", p.project_name AS "Nombre del proyecto", ph.phase_key AS "Fase Id",
-ph.phase_short_name AS "Fase (nombre corto)",
+SELECT DISTINCT p.project_key, p.project_name AS "Nombre del proyecto", ph.phase_key AS "Fase Id",
 ph.phase_name AS "Fase",
+ph.phase_short_name AS "Fase (nombre corto)",
 (SELECT SUM(defect_fix_count)
 FROM defect_log_fact
-WHERE defect_log_fact.defect_injected_phase_key = ph.phase_key ) AS "Num. Defectos Inyectados",
+INNER JOIN plan_item
+ON defect_log_fact.plan_item_key = plan_item.plan_item_key
+WHERE defect_log_fact.defect_injected_phase_key = ph.phase_key AND plan_item.project_key = p.project_key ) AS "Num. Defectos Inyectados",
 (SELECT SUM(defect_fix_count)
 FROM defect_log_fact
-WHERE defect_log_fact.defect_removed_phase_key = ph.phase_key ) AS "Num. Defectos Removidos"
+INNER JOIN plan_item
+ON defect_log_fact.plan_item_key = plan_item.plan_item_key
+WHERE defect_log_fact.defect_removed_phase_key = ph.phase_key AND plan_item.project_key = p.project_key ) AS "Num. Defectos Removidos"
 FROM phase AS ph
 INNER JOIN plan_item AS pi
 ON pi.plan_item_key = d.plan_item_key
