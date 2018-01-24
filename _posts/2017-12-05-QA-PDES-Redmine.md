@@ -32,15 +32,19 @@ CREATE USER 'pdes'@'localhost'
 5. Hacer consultas a la BD. La documentación completa sobre esta base de datos se encuentra en [DataWarehouse PDES](https://www.processdash.com/pdes-tpdw)
 Por ejemplo, para obtener las fases de cada proyecto y los defectos inyectados y removidos en cada una:  
 ```
-SELECT DISTINCT p.project_name AS "Nombre del proyecto", ph.phase_key AS "Fase Id",
-ph.phase_short_name AS "Fase (nombre corto)",
+SELECT DISTINCT p.project_key, p.project_name AS "Nombre del proyecto", ph.phase_key AS "Fase Id",
 ph.phase_name AS "Fase",
+ph.phase_short_name AS "Fase (nombre corto)",
 (SELECT SUM(defect_fix_count)
 FROM defect_log_fact
-WHERE defect_log_fact.defect_injected_phase_key = ph.phase_key ) AS "Num. Defectos Inyectados",
+INNER JOIN plan_item
+ON defect_log_fact.plan_item_key = plan_item.plan_item_key
+WHERE defect_log_fact.defect_injected_phase_key = ph.phase_key AND plan_item.project_key = p.project_key ) AS "Num. Defectos Inyectados",
 (SELECT SUM(defect_fix_count)
 FROM defect_log_fact
-WHERE defect_log_fact.defect_removed_phase_key = ph.phase_key ) AS "Num. Defectos Removidos"
+INNER JOIN plan_item
+ON defect_log_fact.plan_item_key = plan_item.plan_item_key
+WHERE defect_log_fact.defect_removed_phase_key = ph.phase_key AND plan_item.project_key = p.project_key ) AS "Num. Defectos Removidos"
 FROM phase AS ph
 INNER JOIN plan_item AS pi
 ON pi.plan_item_key = d.plan_item_key
@@ -48,7 +52,7 @@ INNER JOIN project AS p
 ON p.project_key = pi.project_key
 JOIN defect_log_fact AS d
 WHERE ph.phase_key = d.defect_injected_phase_key OR ph.phase_key = d.defect_removed_phase_key
-ORDER BY ph.phase_key
+ORDER BY p.project_key, ph.phase_key
 ```
 
 ## BD Redmine
